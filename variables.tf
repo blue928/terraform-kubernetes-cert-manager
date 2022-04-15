@@ -15,7 +15,7 @@ variable "cert_manager_chart_version" {
 
 variable "cert_manager_namespace" {
   description = "The namespace to deploy cert-manager and CRDs to"
-  default     = null
+  default     = "cert-manager"
 }
 
 variable "cert_manager_email" {
@@ -24,7 +24,7 @@ variable "cert_manager_email" {
 
 variable "suffix" {
   description = "The suffix to use when creating resources"
-  default     = null
+  default     = "prod"
 }
 
 # Staging Server
@@ -33,7 +33,8 @@ variable "suffix" {
 #  server: "https://acme-v02.api.letsencrypt.org/directory"
 variable "acme_server" {
   description = "The acme server to use. ACME Production server: https://acme-v02.api.letsencrypt.org/directory and ACME Staging: https://acme-staging-v02.api.letsencrypt.org/directory"
-  default     = "https://acme-staging-v02.api.letsencrypt.org/directory"
+  #default     = "https://acme-staging-v02.api.letsencrypt.org/directory"
+  default     = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
 variable "ingress_class" {

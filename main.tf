@@ -8,7 +8,7 @@ resource "helm_release" "cert_manager" {
   repository       = "https://charts.jetstack.io"
   chart            = "cert-manager"
   version          = var.cert_manager_chart_version
-  namespace        = var.cert_manager_namespace == null ? var.namespace : var.cert_manager_namespace
+  namespace        = var.cert_manager_namespace
   create_namespace = true
 
   set {
@@ -25,7 +25,7 @@ resource "helm_release" "cert_issuer" {
   name       = "cert-issuer"
   repository = path.module
   chart      = "cert-issuer"
-  namespace  = var.namespace
+  namespace  = var.cert_manager_namespace
 
   set {
     name  = "fullnameOverride"
