@@ -8,14 +8,9 @@ variable "module_depends_on" {
   default     = null
 }
 
-variable "namespace" {
-  description = "The namespace to deploy the cert-manager to kubernetes object"
-  default     = "default"
-}
-
 variable "cert_manager_chart_version" {
   description = "The version of Cert-manager to install"
-  default     = "v0.15.1"
+  default     = "1.8.0"
 }
 
 variable "cert_manager_namespace" {
