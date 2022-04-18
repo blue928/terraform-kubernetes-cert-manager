@@ -34,7 +34,7 @@ variable "suffix" {
 variable "acme_server" {
   description = "The acme server to use. ACME Production server: https://acme-v02.api.letsencrypt.org/directory and ACME Staging: https://acme-staging-v02.api.letsencrypt.org/directory"
   #default     = "https://acme-staging-v02.api.letsencrypt.org/directory"
-  default     = "https://acme-v02.api.letsencrypt.org/directory"
+  default = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
 variable "ingress_class" {
