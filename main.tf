@@ -17,7 +17,7 @@ resource "helm_release" "cert_manager" {
   }
 
 
-  depends_on = [var.module_depends_on]
+  #depends_on = [var.module_depends_on]
 }
 
 # Cert Issuer using Helm
