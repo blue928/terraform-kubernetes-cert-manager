@@ -10,6 +10,7 @@ resource "helm_release" "cert_manager" {
   version          = var.cert_manager_chart_version
   namespace        = var.cert_manager_namespace
   create_namespace = true
+  force_update = true
 
   set {
     name  = "installCRDs"
