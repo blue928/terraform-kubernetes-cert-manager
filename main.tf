@@ -3,7 +3,7 @@ locals {
 }
 
 # Cert-manager
-/*resource "helm_release" "cert_manager" {
+resource "helm_release" "cert_manager" {
   name             = "cert-manager"
   repository       = "https://charts.jetstack.io"
   chart            = "cert-manager"
@@ -30,7 +30,8 @@ resource "helm_release" "cert_issuer" {
 
   set {
     name  = "fullnameOverride"
-    value = local.issuer_name
+    #value = local.issuer_name
+    value = "letsencrypt-prod"
   }
 
   set {
@@ -54,4 +55,4 @@ resource "helm_release" "cert_issuer" {
   }
 
   depends_on = [helm_release.cert_manager]
-}*/
+}
